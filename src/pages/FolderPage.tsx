@@ -120,7 +120,7 @@ export default function FolderPage() {
           </div>
           <div className="rounded-[2rem] overflow-hidden aspect-square">
             <img 
-              src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800" 
+              src="/assets/recep.jpg?auto=format&fit=crop&q=80&w=800"
               alt="Clinical environment" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
