@@ -288,7 +288,7 @@ export default function FolderPage() {
             </div>
             <div className="flex items-center gap-3">
               <MapPin className="text-blue-500" />
-              <span className="font-bold">Curitiba - PR</span>
+              <span className="font-bold">São Paulo - SP</span>
             </div>
           </div>
           <div className="pt-8">

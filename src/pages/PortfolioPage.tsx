@@ -374,7 +374,7 @@ export default function PortfolioPage() {
             <h4 className="font-bold uppercase tracking-widest text-sm" style={{ color: COLORS.green }}>Endereço</h4>
             <div className="flex items-start gap-3 text-gray-600">
               <MapPin size={18} className="mt-1 flex-shrink-0" />
-              <span>Curitiba - PR</span>
+              <span>São Paulo - SP</span>
             </div>
           </div>
 

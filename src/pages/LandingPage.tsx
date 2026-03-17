@@ -77,7 +77,7 @@ export default function LandingPage() {
         Scene 6: Montage of different sectors: industry, office, retail, construction. 
         Scene 7: A health talk or SIPAT activity in a meeting room. 
         Scene 8: The professional team smiling in the clinic. 
-        Ending: Logo with text "Curitiba - Contato Comercial - WhatsApp". 
+        Ending: Logo with text "São Paulo - Contato Comercial - WhatsApp". 
         Style: Cinematographic, natural lighting, professional, trustworthy, 30-45 seconds.`,
         config: {
           numberOfVideos: 1,
@@ -546,7 +546,7 @@ export default function LandingPage() {
               </a>
               <div className="flex items-start gap-3">
                 <MapPin size={18} className="mt-1 flex-shrink-0" />
-                <span>Curitiba, PR</span>
+                <span>São Paulo, SP</span>
               </div>
               <a href="https://wa.me/5511975176244?text=Olá,%20gostaria%20de%20saber%20mais!" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-orange-500 transition-colors">
                 <Phone size={18} className="rounded-full shadow-2xl border-1 p-0.5 border-black"/>
