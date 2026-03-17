@@ -59,7 +59,7 @@ export default function FolderPage() {
             <div className="w-48 h-48 relative">
               <img 
               // auto=format&fit=crop&q=80&w=400
-                src="/assets/clinic-logo.jpg"
+                src="/assets/clinic-logo.jpg?v=1"
                 alt="Clinic Logo"
                 className="w-full h-full object-cover rounded-full shadow-2xl border-4 border-white"
                 referrerPolicy="no-referrer"
