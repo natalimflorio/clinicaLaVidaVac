@@ -19,6 +19,7 @@ import {
   ChevronUp
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import clinicLogo from "../../assets/clinic-logo.jpg";
 
 const COLORS = {
   orange: "#f15a24",
@@ -132,7 +133,7 @@ export default function PortfolioPage() {
           <div className="w-34 h-34 relative">
               <img 
               // auto=format&fit=crop&q=80&w=400
-                src="/assets/clinic-logo.jpg?v=1"
+                src={clinicLogo}
                 alt="Clinic Logo"
                 className="w-full h-full object-cover rounded-full shadow-2xl border-4 border-white"
                 referrerPolicy="no-referrer"

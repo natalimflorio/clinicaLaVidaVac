@@ -16,6 +16,8 @@ import {
   Stethoscope
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import clinicLogo from "../../assets/clinic-logo.jpg";
+import recepImg from "../../assets/recep.jpg";
 
 const COLORS = {
   orange: "#f15a24",
@@ -59,7 +61,7 @@ export default function FolderPage() {
             <div className="w-48 h-48 relative">
               <img 
               // auto=format&fit=crop&q=80&w=400
-                src="/assets/clinic-logo.jpg?v=1"
+                src={clinicLogo}
                 alt="Clinic Logo"
                 className="w-full h-full object-cover rounded-full shadow-2xl border-4 border-white"
                 referrerPolicy="no-referrer"
@@ -120,7 +122,7 @@ export default function FolderPage() {
           </div>
           <div className="rounded-[2rem] overflow-hidden aspect-square">
             <img 
-              src="/assets/recep.jpg?auto=format&fit=crop&q=80&w=800"
+              src={recepImg}
               alt="Clinical environment" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
