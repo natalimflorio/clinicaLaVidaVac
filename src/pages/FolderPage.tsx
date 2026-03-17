@@ -284,7 +284,7 @@ export default function FolderPage() {
             </div>
             <div className="flex items-center gap-3">
               <Mail className="text-green-500" />
-              <span className="font-bold">clinicalavidavac@gmail.com</span>
+              <span className="font-bold">contato@lavidavac.com.br</span>
             </div>
             <div className="flex items-center gap-3">
               <MapPin className="text-blue-500" />

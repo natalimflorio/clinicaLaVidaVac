@@ -358,9 +358,9 @@ export default function PortfolioPage() {
                 <Phone size={18} />
                 <span>(11) 97517-6244</span>
               </a>
-              <a href="mailto:clinicalavidavac@gmail.com" className="flex items-center gap-3 hover:text-orange-500 transition-colors">
+              <a href="mailto:contato@lavidavac.com.br" className="flex items-center gap-3 hover:text-orange-500 transition-colors">
                 <Mail size={18} />
-                <span>clinicalavidavac@gmail.com</span>
+                <span>contato@lavidavac.com.br</span>
               </a>
               {/* whatsapp https://wa.me/5511)975176244?text=Ol%C3%A1%2C%20Quero%20saber%20mais! */}
               <a href="https://wa.me/5511975176244?text=Olá,%20gostaria%20de%20saber%20mais!" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-orange-500 transition-colors">
