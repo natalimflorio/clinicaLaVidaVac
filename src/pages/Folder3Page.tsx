@@ -18,7 +18,9 @@ import {
   Clock,
   Building,
   Target,
-  Eye
+  Eye,
+  Instagram,
+  Linkedin
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import clinicLogo from "../../assets/clinic-logo.jpg";
@@ -263,10 +265,13 @@ export default function Folder3Page() {
                   </div>
                   
                   <div className="space-y-1 pt-1 border-t border-white/20">
-                     <p className="text-[9px] font-black">www.lavidevac.com.br</p>
-                     <p className="text-[9px] font-black">Tel: (11) 97077-6344</p>
-                     <p className="text-[9px] font-black">@vasinaslavida</p>
-                     <p className="text-[9px] font-black">E-mail: contato@lavidevac.com.br</p>
+                     <p className="text-[9px] font-black">www.lavidavac.com.br</p>
+                     <p className="text-[9px] font-black">Tel: (11) 97517-6244</p>
+                     <p className="text-[9px] font-black">@vacinaslavida</p>
+                     <p className="text-[9px] font-black">E-mail: contato@lavidavac.com.br</p>
+                     <div className="flex items-center gap-1 text-[7px] font-black uppercase opacity-80 pt-1">
+                        <Linkedin size={8} /> LinkedIn
+                     </div>
                   </div>
                </div>
 

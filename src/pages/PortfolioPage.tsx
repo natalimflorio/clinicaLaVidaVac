@@ -10,6 +10,7 @@ import {
   MapPin, 
   Instagram, 
   Mail,
+  Linkedin,
   Syringe,
   Users,
   Sparkles,
@@ -322,33 +323,6 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Clients Section */}
-      {/* <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-4xl font-bold" style={{ color: COLORS.blue }}>Nossos Clientes</h2>
-            <p className="text-lg text-gray-500 max-w-3xl mx-auto">
-              Empresas de diversos setores já confiaram nos serviços da Clínica La Vida para promover saúde, prevenção e bem-estar entre seus colaboradores.
-            </p>
-          </div>
-          
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-            {[
-              "TechCorp Solutions",
-              "Global Logistics PR",
-              "Indústria Metalúrgica Sul",
-              "Varejo Express",
-              "Construtora Horizonte",
-              "Educação & Futuro"
-            ].map((name, i) => (
-              <div key={i} className="px-6 py-3 rounded-xl border border-gray-200 font-bold text-xl text-gray-400">
-                {name}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
       {/* Footer / Contact */}
       <footer className="px-6 py-16 border-t border-gray-100" style={{ backgroundColor: "#fff" }}>
         <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-12">
@@ -363,7 +337,6 @@ export default function PortfolioPage() {
                 <Mail size={18} />
                 <span>contato@lavidavac.com.br</span>
               </a>
-              {/* whatsapp https://wa.me/5511)975176244?text=Ol%C3%A1%2C%20Quero%20saber%20mais! */}
               <a href="https://wa.me/5511975176244?text=Olá,%20gostaria%20de%20saber%20mais!" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-orange-500 transition-colors">
                 <Phone size={18} className="rounded-full shadow-2xl border-1 p-0.5 border-black"/>
                 <span>Whatsapp</span>
@@ -385,8 +358,11 @@ export default function PortfolioPage() {
               <a href="https://instagram.com/vacinaslavida" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 hover:border-orange-500 hover:text-orange-500 transition-all">
                 <Instagram size={20} />
               </a>
-              <span className="text-sm text-gray-500 self-center">@vacinaslavida</span>
+              <a href="https://www.linkedin.com/company/clinica-la-vida-vacinas-sa%C3%BAde-e-bem-estar/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 hover:border-orange-500 hover:text-orange-500 transition-all">
+                <Linkedin size={20} />
+              </a>
             </div>
+            <span className="text-sm text-gray-500 self-center">@vacinaslavida</span>
           </div>
         </div>
         

@@ -10,6 +10,7 @@ import {
   MapPin, 
   Instagram, 
   Mail,
+  Linkedin,
   ArrowRight,
   CheckCircle2,
   Syringe,
@@ -123,6 +124,7 @@ export default function LandingPage() {
     "image": "https://lavidavac.com.br/assets/clinic-logo.jpg",
     "description": "Clínica de vacinação especializada em imunização corporativa, Quick Massage e Ginástica Laboral em São Paulo.",
     "telephone": "+5511975176244",
+    "email": "contato@lavidavac.com.br",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "São Paulo", 
@@ -136,6 +138,10 @@ export default function LandingPage() {
       "longitude": -46.633308
     },
     "url": "https://lavidavac.com.br",
+    "sameAs": [
+      "https://www.instagram.com/vacinaslavida",
+      "https://www.linkedin.com/company/clinica-la-vida-vacinas-sa%C3%BAde-e-bem-estar/"
+    ],
     "priceRange": "$$",
     "openingHoursSpecification": [
       {
@@ -176,6 +182,7 @@ export default function LandingPage() {
           
           <div className="hidden md:flex items-center gap-8">
             <a href="#servicos" className="text-sm font-semibold hover:opacity-70 transition-opacity">Serviços</a>
+            <Link to="/blog" className="text-sm font-semibold hover:opacity-70 transition-opacity">Blog</Link>
             <a href="#video" className="text-sm font-semibold hover:opacity-70 transition-opacity">Vídeo Institucional</a>
             <Link to="/folder" className="text-sm font-semibold hover:opacity-70 transition-opacity">Apresentação (Folder)</Link>
             <Link to="/portfolio" className="text-sm font-semibold px-4 py-2 rounded-full text-white transition-all hover:shadow-lg" style={{ backgroundColor: COLORS.green }}>
@@ -386,18 +393,21 @@ export default function LandingPage() {
             {[
               {
                 title: "Vacinação Estratégica",
+                slug: "vacinacao-corporativa",
                 desc: "Imunização de alto impacto para sua família ou empresa, com foco na redução de riscos e proteção total.",
                 icon: Syringe,
                 color: COLORS.blue
               },
               {
                 title: "Ginástica Laboral",
+                slug: "ginastica-laboral",
                 desc: "Sessões dinâmicas de exercícios preventivos para melhorar a postura e o bem-estar no dia a dia.",
                 icon: Activity,
                 color: COLORS.orange
               },
               {
                 title: "Bem-estar Corporativo",
+                slug: "quick-massage",
                 desc: "Soluções completas como Quick Massage e SIPAT para elevar a produtividade da sua equipe.",
                 icon: Users,
                 color: COLORS.green
@@ -413,7 +423,7 @@ export default function LandingPage() {
                 </div>
                 <h3 className="text-2xl font-bold mb-4" style={{ color: COLORS.blue }}>{service.title}</h3>
                 <p className="text-gray-500 leading-relaxed mb-6">{service.desc}</p>
-                <Link to={service.title === "Bem-estar Corporativo" || service.title === "Ginástica Laboral" ? "/portfolio" : "#"} className="flex items-center gap-2 font-bold text-sm uppercase tracking-wider" style={{ color: service.color }}>
+                <Link to={`/servicos/${service.slug}`} className="flex items-center gap-2 font-bold text-sm uppercase tracking-wider" style={{ color: service.color }}>
                   Saber Mais <ArrowRight size={16} />
                 </Link>
               </motion.div>
@@ -577,10 +587,13 @@ export default function LandingPage() {
               Referência em imunização e saúde preventiva em São Paulo. Cuidando da sua vida com excelência e humanização.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center hover:text-orange-500 transition-colors">
+              <a href="https://instagram.com/vacinaslavida" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center hover:text-orange-500 transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center hover:text-orange-500 transition-colors">
+              <a href="https://www.linkedin.com/company/clinica-la-vida-vacinas-sa%C3%BAde-e-bem-estar/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center hover:text-orange-500 transition-colors">
+                <Linkedin size={20} />
+              </a>
+              <a href="mailto:contato@lavidavac.com.br" className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center hover:text-orange-500 transition-colors">
                 <Mail size={20} />
               </a>
             </div>
@@ -592,6 +605,10 @@ export default function LandingPage() {
               <a href="tel:+5511975176244" className="flex items-center gap-3 hover:text-orange-500 transition-colors">
                 <Phone size={18} />
                 <span>(11) 97517-6244</span>
+              </a>
+              <a href="mailto:contato@lavidavac.com.br" className="flex items-center gap-3 hover:text-orange-500 transition-colors">
+                <Mail size={18} />
+                <span>contato@lavidavac.com.br</span>
               </a>
               <div className="flex items-start gap-3">
                 <MapPin size={18} className="mt-1 flex-shrink-0" />
@@ -609,6 +626,7 @@ export default function LandingPage() {
             <div className="flex flex-col gap-3 text-gray-600">
               <Link to="/portfolio" className="hover:text-orange-500 transition-colors">Portfólio Corporativo</Link>
               <Link to="/folder" className="hover:text-orange-500 transition-colors">Apresentação Digital (Folder)</Link>
+              <Link to="/blog" className="hover:text-orange-500 transition-colors">Blog & Dicas</Link>
               <a href="#servicos" className="hover:text-orange-500 transition-colors">Nossos Serviços</a>
               <a href="https://wa.me/5511975176244" className="hover:text-orange-500 transition-colors">Agendar Consulta</a>
             </div>

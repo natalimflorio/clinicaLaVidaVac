@@ -293,10 +293,18 @@ export default function FolderPage() {
               <span className="font-bold">São Paulo - SP</span>
             </div>
           </div>
-          <div className="pt-8">
+          <div className="pt-8 flex flex-col items-center gap-4">
              <Link to="/" className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl text-white font-bold shadow-xl transition-all hover:scale-105" style={{ backgroundColor: COLORS.blue }}>
               Visite nosso Site
             </Link>
+            <div className="flex gap-6">
+              <a href="https://instagram.com/vacinaslavida" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-bold text-gray-600 hover:text-orange-500 transition-colors">
+                <Instagram size={20} /> @vacinaslavida
+              </a>
+              <a href="https://www.linkedin.com/company/clinica-la-vida-vacinas-sa%C3%BAde-e-bem-estar/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-bold text-gray-600 hover:text-orange-500 transition-colors">
+                <Linkedin size={20} /> LinkedIn
+              </a>
+            </div>
           </div>
         </section>
 

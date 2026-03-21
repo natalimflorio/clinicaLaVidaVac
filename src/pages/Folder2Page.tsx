@@ -16,7 +16,9 @@ import {
   Activity,
   Award,
   Clock,
-  Building
+  Building,
+  Linkedin,
+  Instagram
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import clinicLogo from "../../assets/clinic-logo.jpg";
@@ -223,7 +225,7 @@ export default function Folder2Page() {
 
             {/* Illustration Placeholder */}
             <div className="rounded-2xl overflow-hidden shadow-inner bg-gray-50 p-2 flex justify-center">
-               <img src="https://images.unsplash.com/photo-1576091160550-2173bdb999ef?auto=format&fit=crop&q=80&w=400" alt="Equipe" className="rounded-xl object-cover h-40 w-full" />
+               <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=400" alt="Equipe" className="rounded-xl object-cover h-40 w-full" />
             </div>
 
             {/* Contact Card */}
@@ -236,7 +238,7 @@ export default function Folder2Page() {
                </div>
                <div className="space-y-3 pt-2">
                   <div className="flex items-center gap-2 text-sm font-bold">
-                    <Phone size={16} /> (11) 97077-6344
+                    <Phone size={16} /> (11) 97517-6244
                   </div>
                   <div className="flex items-center gap-2 text-sm font-bold">
                     <Mail size={16} /> contato@lavidavac.com.br
@@ -245,17 +247,20 @@ export default function Folder2Page() {
                     <MapPin size={16} /> São Paulo - SP
                   </div>
                </div>
-               <div className="pt-2">
+               <div className="pt-2 flex flex-col gap-2">
                   <div className="text-[10px] font-bold uppercase tracking-widest bg-white/20 p-2 rounded text-center">
                     @vacinaslavida
                   </div>
+                  <a href="https://www.linkedin.com/company/clinica-la-vida-vacinas-sa%C3%BAde-e-bem-estar/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1 text-[8px] font-bold uppercase tracking-widest bg-white/10 p-1 rounded hover:bg-white/20 transition-colors">
+                    <Linkedin size={10} /> LinkedIn
+                  </a>
                </div>
             </div>
 
             {/* Bottom Footer Text */}
             <div className="text-[9px] text-gray-400 text-center pt-4">
               Clínica La Vida - Gestão de Saúde Corporativa<br />
-              Todos os direitos reservados - 2024
+              Todos os direitos reservados - {new Date().getFullYear()}
             </div>
           </section>
 
