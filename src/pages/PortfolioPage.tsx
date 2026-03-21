@@ -34,6 +34,7 @@ const COLORS = {
 const corporateServices = [
   {
     title: "Campanhas de Vacinação",
+    slug: "vacinacao-corporativa",
     description: "Imunização estratégica: Proteção de alto impacto para reduzir o absenteísmo e garantir a saúde do seu time.",
     icon: Syringe,
     image: "https://images.unsplash.com/photo-1618961734760-466979ce35b0?auto=format&fit=crop&q=80&w=800",
@@ -50,6 +51,7 @@ const corporateServices = [
   },
   {
     title: "Quick Massage",
+    slug: "quick-massage",
     description: "Pausa produtiva: Sessões de relaxamento que renovam o foco e combatem o estresse ocupacional.",
     icon: Sparkles,
     image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=800",
@@ -63,6 +65,7 @@ const corporateServices = [
   },
   {
     title: "Ginástica Laboral",
+    slug: "ginastica-laboral",
     description: "Movimento e prevenção: Séries de exercícios dinâmicos para evitar lesões e melhorar o clima organizacional.",
     icon: Activity,
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800",
@@ -76,6 +79,7 @@ const corporateServices = [
   },
   {
     title: "SIPAT e Eventos",
+    slug: "#",
     description: "Conscientização ativa: Palestras e ações dinâmicas que transformam a cultura de saúde da empresa.",
     icon: ShieldCheck,
     image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800",
@@ -112,6 +116,9 @@ export default function PortfolioPage() {
             Clínica La Vida
           </Link>
           <div className="flex items-center gap-6">
+            <Link to="/blog" className="text-sm font-semibold hover:opacity-70 transition-opacity" style={{ color: COLORS.blue }}>
+              Blog
+            </Link>
             <Link to="/folder" className="text-sm font-semibold hover:opacity-70 transition-opacity" style={{ color: COLORS.blue }}>
               Ver Apresentação (Folder)
             </Link>
@@ -195,11 +202,18 @@ export default function PortfolioPage() {
                 />
               </div>
               <div className="p-8">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 rounded-xl" style={{ backgroundColor: COLORS.orange + '15' }}>
-                    <item.icon size={24} style={{ color: COLORS.orange }} />
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 rounded-xl" style={{ backgroundColor: COLORS.orange + '15' }}>
+                      <item.icon size={24} style={{ color: COLORS.orange }} />
+                    </div>
+                    <h3 className="text-2xl font-bold" style={{ color: COLORS.text }}>{item.title}</h3>
                   </div>
-                  <h3 className="text-2xl font-bold" style={{ color: COLORS.text }}>{item.title}</h3>
+                  {item.slug !== "#" && (
+                    <Link to={`/servicos/${item.slug}`} className="p-2 rounded-full bg-gray-50 hover:bg-orange-50 text-gray-400 hover:text-orange-500 transition-colors">
+                      <ArrowRight size={20} />
+                    </Link>
+                  )}
                 </div>
                 <p className="text-gray-500 mb-6 leading-relaxed">
                   {item.description}
