@@ -14,12 +14,12 @@ import {
   CheckCircle2,
   Syringe,
   Activity,
-  Stethoscope,
   Play,
   Loader2,
   Video
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 declare global {
   interface Window {
@@ -50,13 +50,17 @@ export default function LandingPage() {
   }, []);
 
   const checkKey = async () => {
-    const selected = await window.aistudio.hasSelectedApiKey();
-    setHasKey(selected);
+    if (window.aistudio) {
+        const selected = await window.aistudio.hasSelectedApiKey();
+        setHasKey(selected);
+    }
   };
 
   const handleOpenKey = async () => {
-    await window.aistudio.openSelectKey();
-    setHasKey(true);
+    if (window.aistudio) {
+        await window.aistudio.openSelectKey();
+        setHasKey(true);
+    }
   };
 
   const generateVideo = async () => {
@@ -111,8 +115,53 @@ export default function LandingPage() {
     }
   };
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Clínica La Vida",
+    "alternateName": "LaVidaVac",
+    "image": "https://lavidavac.com.br/assets/clinic-logo.jpg",
+    "description": "Clínica de vacinação especializada em imunização corporativa, Quick Massage e Ginástica Laboral em São Paulo.",
+    "telephone": "+5511975176244",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "São Paulo", 
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -23.550520, 
+      "longitude": -46.633308
+    },
+    "url": "https://lavidavac.com.br",
+    "priceRange": "$$",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen font-sans selection:bg-blue-100" style={{ backgroundColor: COLORS.bg, color: COLORS.text }}>
+      <SEO 
+        title="Clínica La Vida | Vacinas e Imunização Corporativa em São Paulo"
+        description="Clínica especializada em vacinação para empresas, Quick Massage e Ginástica Laboral. Atendimento em São Paulo/SP. Agende agora sua imunização corporativa."
+        keywords="vacinas, imunização, clínica de vacinação, são paulo, vacinação empresa, quick massage, ginástica laboral"
+        jsonLd={jsonLd}
+      />
+
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -161,7 +210,7 @@ export default function LandingPage() {
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight" style={{ color: COLORS.blue }}>
-              Vacinação e bem-estar para <span style={{ color: COLORS.orange }}>empresas</span>.
+              Clínica La Vida: Vacinação e bem-estar para <span style={{ color: COLORS.orange }}>empresas em São Paulo</span>.
             </h1>
             
             <p className="text-xl text-gray-600 max-w-xl leading-relaxed">
@@ -199,7 +248,7 @@ export default function LandingPage() {
               <div className="flex -space-x-3">
                 {[1, 2, 3, 4].map((i) => (
                   <div key={i} className="w-12 h-12 rounded-full border-4 border-white overflow-hidden">
-                    <img src={`https://picsum.photos/seed/user${i}/100/100`} alt="User" referrerPolicy="no-referrer" />
+                    <img src={`https://picsum.photos/seed/user${i}/100/100`} alt="Cliente satisfeito com a vacinação" referrerPolicy="no-referrer" />
                   </div>
                 ))}
               </div>
@@ -221,7 +270,7 @@ export default function LandingPage() {
             <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white">
               <img 
                 src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=1000" 
-                alt="Medical Care" 
+                alt="Equipe médica da Clínica La Vida realizando atendimento de vacinação"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -329,8 +378,8 @@ export default function LandingPage() {
       <section id="servicos" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl font-bold mb-4" style={{ color: COLORS.blue }}>Nossos Serviços</h2>
-            <p className="text-lg text-gray-500">Oferecemos uma gama completa de serviços para garantir a saúde preventiva de toda a sua família.</p>
+            <h2 className="text-4xl font-bold mb-4" style={{ color: COLORS.blue }}>Nossos Serviços de Vacinação e Saúde</h2>
+            <p className="text-lg text-gray-500">Oferecemos uma gama completa de serviços para garantir a saúde preventiva de toda a sua família e empresa.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -379,7 +428,7 @@ export default function LandingPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
               <h2 className="text-4xl font-bold leading-tight" style={{ color: COLORS.blue }}>
-                Saúde e bem-estar ao alcance da sua empresa
+                Por que escolher a Clínica La Vida?
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
                 Promovemos soluções acessíveis e personalizadas para tornar o dia a dia corporativo mais leve e motivador. Nossa abordagem integra saúde física e mental para resultados reais em produtividade.
@@ -409,18 +458,18 @@ export default function LandingPage() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4 pt-8">
                 <div className="aspect-square rounded-3xl overflow-hidden shadow-lg">
-                  <img src="https://www.irishnews.com/resizer/v2/KF3AGZ7GIZPCLJP6D6IKAVAH2Q.jpg?smart=true&auth=f934a24d339c9836146ad8b3ac7202fa6d46b45939349782d18f3df1592d321e" alt="Health" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  <img src="https://www.irishnews.com/resizer/v2/KF3AGZ7GIZPCLJP6D6IKAVAH2Q.jpg?smart=true&auth=f934a24d339c9836146ad8b3ac7202fa6d46b45939349782d18f3df1592d321e" alt="Promoção de saúde e bem-estar no trabalho" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                 </div>
                 <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-lg">
-                  <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=400" alt="Vaccine" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=400" alt="Vacinação segura e eficaz para empresas" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                 </div>
               </div>
               <div className="space-y-4">
                 <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-lg">
-                  <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=400" alt="Massage" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=400" alt="Sessão de Quick Massage para relaxamento" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                 </div>
                 <div className="aspect-square rounded-3xl overflow-hidden shadow-lg">
-                  <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=400" alt="Meeting" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=400" alt="Reunião de planejamento de saúde ocupacional" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                 </div>
               </div>
             </div>
@@ -432,7 +481,7 @@ export default function LandingPage() {
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4" style={{ color: COLORS.blue }}>O que dizem nossos clientes</h2>
+            <h2 className="text-4xl font-bold mb-4" style={{ color: COLORS.blue }}>Depoimentos de Clientes Satisfeitos</h2>
             <p className="text-lg text-gray-500">Experiências reais de quem transformou sua empresa conosco.</p>
           </div>
           
@@ -494,7 +543,7 @@ export default function LandingPage() {
       {/* Build your package Section */}
       <section className="px-6 py-24 bg-blue-900 text-white">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="text-4xl md:text-5xl font-bold">Monte o seu pacote de bem-estar!</h2>
+          <h2 className="text-4xl md:text-5xl font-bold">Agende sua Vacina ou Serviço Corporativo</h2>
           <p className="text-xl text-blue-100">
             Personalizamos cada detalhe para atender às necessidades da sua empresa ou condomínio.
           </p>
