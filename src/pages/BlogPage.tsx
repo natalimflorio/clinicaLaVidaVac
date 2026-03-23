@@ -12,7 +12,8 @@ import {
   Linkedin,
   ShieldCheck,
   Zap,
-  Smile
+  Smile,
+  MapPin
 } from "lucide-react";
 import SEO from "../components/SEO";
 
