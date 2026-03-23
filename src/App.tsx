@@ -12,6 +12,8 @@ import Folder3Page from "./pages/Folder3Page";
 import ServicePage from "./pages/services/ServicePage";
 import BlogPage from "./pages/BlogPage";
 
+import BlogPost from "./pages/BlogPost";
+
 export default function App() {
   return (
     <Router>
@@ -23,6 +25,7 @@ export default function App() {
         <Route path="/folder3" element={<Folder3Page />} />
         <Route path="/servicos/:slug" element={<ServicePage />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>
     </Router>
   );

@@ -127,7 +127,7 @@ export default function BlogPage() {
                     {post.excerpt}
                   </p>
                   <div className="pt-4 mt-auto">
-                    <Link to="#" className="inline-flex items-center gap-2 font-black text-xs uppercase tracking-widest transition-all group-hover:gap-4" style={{ color: COLORS.green }}>
+                    <Link to={`/blog/${post.slug}`} className="inline-flex items-center gap-2 font-black text-xs uppercase tracking-widest transition-all group-hover:gap-4" style={{ color: COLORS.green }}>
                       Ler artigo completo <ArrowRight size={16} />
                     </Link>
                   </div>
